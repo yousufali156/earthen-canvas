@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+--bg: #F7F7F2; /* cream */
+--fg: #3D405B; /* charcoal */
+}
+
+
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); }
+
+
+.dark body { background: #121212; color: #eaeaea; }
