@@ -2,19 +2,48 @@ import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
 import ProductCard from "@/src/components/ProductCard";
 
-async function getProducts() {
-  // This fetch call runs on the server
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`, {
-      cache: 'no-store' // Ensures fresh data on every request
-  });
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
-  }
-  return res.json();
-}
+// Dummy products for demo
+const dummyProducts = [
+  {
+    _id: "1",
+    name: "Handmade Vase",
+    price: 25,
+    image: "/products/vase.jpg",
+    description: "Elegant handmade ceramic vase for your home decor."
+  },
+  {
+    _id: "2",
+    name: "Ceramic Mug",
+    price: 15,
+    image: "/products/mug.jpg",
+    description: "Stylish ceramic mug for your coffee or tea."
+  },
+  {
+    _id: "3",
+    name: "Decorative Bowl",
+    price: 30,
+    image: "/products/bowl.jpg",
+    description: "Beautiful ceramic bowl perfect for dining or decoration."
+  },
+  {
+    _id: "4",
+    name: "Plant Pot",
+    price: 20,
+    image: "/products/plant-pot.jpg",
+    description: "Handcrafted plant pot for indoor and outdoor plants."
+  },
+  {
+    _id: "5",
+    name: "Ceramic Plate Set",
+    price: 45,
+    image: "/products/plate-set.jpg",
+    description: "Set of 4 decorative ceramic plates."
+  },
+];
 
-export default async function ProductsPage() {
-  const products = await getProducts();
+export default function ProductsPage() {
+  // Use dummyProducts instead of fetching
+  const products = dummyProducts;
 
   return (
     <div className="flex flex-col min-h-screen">
