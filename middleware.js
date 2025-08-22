@@ -1,17 +1,12 @@
-import { auth } from "@/auth";
-
+import { auth } from "@/src/auth";
 
 export default auth((req) => {
-    const isAuthed = !!req.auth;
-    const { pathname, origin } = req.nextUrl;
-
-
-    if (pathname.startsWith("/dashboard") && !isAuthed) {
-        return Response.redirect(new URL("/login", origin));
-    }
+  if (!req.auth && req.nextUrl.pathname.startsWith("/dashboard")) {
+    const newUrl = new URL("/api/auth/signin", req.nextUrl.origin);
+    return Response.redirect(newUrl);
+  }
 });
 
-
 export const config = {
-    matcher: ["/dashboard/:path*"],
+  matcher: ["/dashboard/:path*"],
 };
