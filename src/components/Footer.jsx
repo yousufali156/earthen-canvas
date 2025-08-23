@@ -1,9 +1,7 @@
 export default function Footer() {
-    return (
-        <footer className="mt-16 border-t border-sand/40">
-            <div className="max-w-6xl mx-auto px-4 py-8 text-sm text-charcoal/80">
-                <p>© {new Date().getFullYear()} Pottery Craft — Handmade ceramics with love.</p>
-            </div>
-        </footer>
-    );
+  return (
+    <footer className="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-center py-6 mt-8">
+      &copy; 2025 Earthen Canvas. All rights reserved.
+    </footer>
+  );
 }

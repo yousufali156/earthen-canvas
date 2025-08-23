@@ -1,3 +1,4 @@
+// app/layout.jsx
 import "./globals.css";
 import { playfair, raleway } from "./fonts";
 import Providers from "@/src/components/Providers";
