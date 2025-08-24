@@ -1,8 +1,8 @@
 // app/layout.jsx
 import "./globals.css";
 import { playfair, raleway } from "./fonts";
-import Providers from "@/src/components/Providers";
 import { Toaster } from "react-hot-toast";
+import Providers from "@/components/Providers";
 
 export const metadata = {
   title: "Earthen Canvas",

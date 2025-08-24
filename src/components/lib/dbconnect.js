@@ -1,3 +1,5 @@
+//src/lib/dbconnect.js
+
 import { MongoClient } from "mongodb";
 
 // Check if the MONGODB_URI variable exists in the .env.local file.

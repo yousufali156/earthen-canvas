@@ -1,41 +1,29 @@
-"use client";
-import React from "react";
-import Link from "next/link";
+import Image from "next/image";
 
-export default function ProductCard({ product }) {
-    return (
-        <div className="bg-[#F7F7F2] border border-[#E07A5F]/30 rounded-2xl shadow-md hover:shadow-lg transition p-4 flex flex-col">
-            {/* Product Image */}
-            <div className="w-full h-56 overflow-hidden rounded-xl mb-4">
-                <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover hover:scale-105 transition duration-300"
-                />
-            </div>
-
-            {/* Product Info */}
-            <h2 className="text-xl font-semibold text-[#3D405B] mb-2 font-playfair">
-                {product.name}
-            </h2>
-            <p className="text-[#3D405B]/80 flex-grow mb-3 font-raleway">
-                {product.description.length > 80
-                    ? product.description.slice(0, 80) + "..."
-                    : product.description}
-            </p>
-
-            {/* Price & Button */}
-            <div className="flex items-center justify-between mt-auto">
-                <span className="text-lg font-bold text-[#E07A5F]">
-                    ${product.price}
-                </span>
-                <Link
-                    href={`/products/${product._id}`}
-                    className="px-4 py-2 rounded-xl bg-[#E07A5F] text-white font-medium hover:bg-[#3D405B] transition"
-                >
-                    Details
-                </Link>
-            </div>
+export default function ProductCard({ product, onClick }) {
+  return (
+    <div
+      onClick={onClick}
+      className="bg-white dark:bg-gray-800/50 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 group border border-transparent hover:border-blue-500 cursor-pointer"
+    >
+      <div className="relative w-full h-56 bg-gray-200 dark:bg-gray-700">
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          style={{ objectFit: "cover" }}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="transition-transform duration-500 group-hover:scale-110"
+        />
+      </div>
+      <div className="p-5 text-center">
+        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{product.name}</h3>
+        <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm h-10 overflow-hidden">{product.description}</p>
+        <p className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4">${product.price}</p>
+        <div className="w-full px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+          View Details
         </div>
-    );
+      </div>
+    </div>
+  );
 }

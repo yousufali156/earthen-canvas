@@ -1,15 +1,23 @@
-// src/middleware.js
+// File: src/middleware.js
+
 import { auth } from "@/auth";
 
 export default auth((req) => {
-  // যদি ইউজার লগইন করা না থাকে এবং সুরক্ষিত পেজে যেতে চায়
-  if (!req.auth && req.nextUrl.pathname.startsWith("/dashboard")) {
-    // তাকে লগইন পেজে পাঠিয়ে দেওয়া হবে
-    return Response.redirect(new URL("/login", req.nextUrl.origin));
+  // Check if the user is trying to access a protected route (`/dashboard`)
+  const isProtectedRoute = req.nextUrl.pathname.startsWith("/dashboard");
+  
+  // Check if the user is authenticated
+  const isAuthenticated = !!req.auth;
+
+  // If trying to access a protected route without being authenticated...
+  if (isProtectedRoute && !isAuthenticated) {
+    // ...redirect them to the login page.
+    const newUrl = new URL("/login", req.nextUrl.origin);
+    return Response.redirect(newUrl);
   }
 });
 
+// This config specifies that the middleware should only run on dashboard routes
 export const config = {
-  // dashboard এবং এর ভেতরের সব পেজ এই middleware দ্বারা সুরক্ষিত থাকবে
   matcher: ["/dashboard/:path*"],
 };

@@ -1,30 +1,39 @@
+// File: src/auth.js
+
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
-import clientPromise from "@/lib/dbconnect"; // Corrected: Using path alias for robustness
+import clientPromise from "./components/lib/dbconnect";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  // Use the MongoDB adapter to store user and session data in your database.
+  // Connects NextAuth to your MongoDB database to store user and session info
   adapter: MongoDBAdapter(clientPromise),
+  
+  // Configure authentication providers, in this case, only Google
   providers: [
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-  // The secret is automatically read from the AUTH_SECRET environment variable in your .env.local file.
-  // There is no need to explicitly define it here.
 
-  // Optional: You can specify custom pages for sign-in, sign-out, errors, etc.
+  // Specify custom pages, like a custom login page
   pages: {
     signIn: '/login',
   },
 
-  // Optional: Callbacks are used to control what happens during authentication events.
+  // Use JSON Web Tokens for session management
+  session: {
+    strategy: "jwt",
+  },
+
+  // Callbacks are functions that are executed during the authentication process
   callbacks: {
-    async session({ session, user }) {
-      // Add the user's ID to the session object to make it available on the client side.
-      session.user.id = user.id;
+    // This callback adds the user's unique ID to the session object
+    async session({ session, token }) {
+      if (token?.sub) {
+        session.user.id = token.sub;
+      }
       return session;
     },
   },

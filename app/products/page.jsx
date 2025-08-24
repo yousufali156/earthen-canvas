@@ -1,64 +1,89 @@
-import Navbar from "@/src/components/Navbar";
-import Footer from "@/src/components/Footer";
-import ProductCard from "@/src/components/ProductCard";
+// File: app/products/page.jsx
 
-// Dummy products for demo
-const dummyProducts = [
-  {
-    _id: "1",
-    name: "Handmade Vase",
-    price: 25,
-    image: "/products/vase.jpg",
-    description: "Elegant handmade ceramic vase for your home decor."
-  },
-  {
-    _id: "2",
-    name: "Ceramic Mug",
-    price: 15,
-    image: "/products/mug.jpg",
-    description: "Stylish ceramic mug for your coffee or tea."
-  },
-  {
-    _id: "3",
-    name: "Decorative Bowl",
-    price: 30,
-    image: "/products/bowl.jpg",
-    description: "Beautiful ceramic bowl perfect for dining or decoration."
-  },
-  {
-    _id: "4",
-    name: "Plant Pot",
-    price: 20,
-    image: "/products/plant-pot.jpg",
-    description: "Handcrafted plant pot for indoor and outdoor plants."
-  },
-  {
-    _id: "5",
-    name: "Ceramic Plate Set",
-    price: 45,
-    image: "/products/plate-set.jpg",
-    description: "Set of 4 decorative ceramic plates."
-  },
-];
+"use client"; 
+
+import { useState, useEffect } from "react";
+import Link from "next/link"; 
+import ProductCard from "@/components/ProductCard";
+import ProductModal from "@/components/ProductModal";
+
+
+
+const LoadingSpinner = () => (
+  <div className="flex justify-center items-center py-20">
+    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
+  </div>
+);
 
 export default function ProductsPage() {
-  // Use dummyProducts instead of fetching
-  const products = dummyProducts;
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true); 
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const res = await fetch('/api/products');
+        const data = await res.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      } finally {
+        setLoading(false); 
+      }
+    }
+    fetchProducts();
+  }, []);
+
+  const handleCardClick = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProduct(null);
+  };
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow max-w-6xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-playfair font-bold text-center text-charcoal mb-10">
-          Our Collection
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <ProductCard key={product._id} product={product} />
-          ))}
+    <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+            Our Collection
+          </h1>
+          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+            Handcrafted pottery for the modern home.
+          </p>
         </div>
+
+        {/* Back to Home */}
+        <div className="mb-8 flex justify-center">
+          <Link href="/">
+            <button className="px-6 py-2 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors">
+              ← Back to Home
+            </button>
+          </Link>
+        </div>
+
+        {loading ? (
+          <LoadingSpinner />
+        ) : products.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {products.map((product) => (
+              <ProductCard 
+                key={product.id || product._id} 
+                product={product} 
+                onClick={() => handleCardClick(product)} 
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-gray-500 dark:text-gray-400">
+            No products found.
+          </p>
+        )}
       </main>
-      <Footer />
+
+      <ProductModal product={selectedProduct} onClose={handleCloseModal} />
     </div>
   );
 }

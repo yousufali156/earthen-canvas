@@ -1,7 +1,7 @@
 // HomePage.jsx
 
-import Navbar from "@/src/components/Navbar";
-import Footer from "@/src/components/Footer";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
 export default function HomePage() {
