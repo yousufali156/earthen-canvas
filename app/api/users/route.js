@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import clientPromise from "@/lib/mongodb";
+import clientPromise from "@/components/lib/dbconnect";
 
 export async function GET() {
   const client = await clientPromise;

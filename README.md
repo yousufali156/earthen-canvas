@@ -1,37 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Earthen Canvas - Product Management App
 
-## Getting Started
+A simple Next.js 15 application with authentication using **NextAuth.js**.  
+Users can view public pages and products, while authenticated users can access a protected dashboard to add new products.
 
-First, run the development server:
+---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Core Features](#core-features)
+- [Optional Enhancements](#optional-enhancements)
+- [Technologies Used](#technologies-used)
+- [Setup & Installation](#setup--installation)
+- [Routes Summary](#routes-summary)
+- [Live Site](#live-site)
+- [License](#license)
+
+---
+
+## Project Overview
+
+Earthen Canvas is a minimal product showcase and management app.  
+It demonstrates the use of **Next.js App Router**, **NextAuth.js**, and serverless API routes for managing products.
+
+---
+
+## Core Features
+
+1. **Landing Page (`/`)**
+   - Includes Navbar, Hero section, Product Highlights, Footer
+   - Navigation links to login and products page
+   - Publicly accessible
+
+2. **Login Page (`/login`)**
+   - Implemented using NextAuth.js
+   - Supports Google OAuth login (or credentials login)
+   - Redirects to `/products` after successful login
+
+3. **Product List Page (`/products`)**
+   - Publicly accessible
+   - Fetches and displays list of products
+   - Each product includes name, description, price, and a “View Details” button
+
+4. **Product Details Page (`/products/[id]`)**
+   - Publicly accessible
+   - Displays full details of a single product
+
+5. **Protected Page: Add Product (`/dashboard/add-product`)**
+   - Accessible only for logged-in users
+   - Form to add new products and save to database
+   - Redirects unauthenticated users to login page
+
+---
+
+## Optional Enhancements
+
+- Loading spinner while submitting forms
+- Toast messages for success/failure notifications
+- Light/Dark theme toggle
+
+---
+
+## Technologies Used
+
+- **Next.js 15** (App Router)  
+- **NextAuth.js** for authentication  
+- **MongoDB / Mock API** for product data  
+- **Tailwind CSS** for styling  
+- **React Hooks** for state management  
+
+---
+
+## Setup & Installation
+
+1. Clone the repository:
 
 ```bash
+git clone https://github.com/yourusername/earthen-canvas.git
+cd earthen-canvas
+
+
+npm install
+# or
+yarn install
+
+
+
+NEXTAUTH_URL=https://earthen-canvas-six.vercel.app
+NEXTAUTH_SECRET=your_random_secret
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+MONGODB_URI=your_mongodb_connection_string
+
+
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Visit http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route                    | Access    | Description                                                |
+| ------------------------ | --------- | ---------------------------------------------------------- |
+| `/`                      | Public    | Landing page with Hero, Product Highlights, Navbar, Footer |
+| `/login`                 | Public    | Login page using NextAuth.js                               |
+| `/products`              | Public    | Product list page                                          |
+| `/products/[id]`         | Public    | Product details page                                       |
+| `/dashboard/add-product` | Protected | Add new product (requires login)                           |
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Live Site
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# earthen-canvas
+Vercel https://earthen-canvas-six.vercel.app/
