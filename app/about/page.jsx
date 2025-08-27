@@ -8,10 +8,10 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen bg-sand dark:bg-charcoal">
       <Navbar />
-      <main className="flex-grow pt-16"> {/* Added padding top to avoid overlap with fixed navbar */}
+      <main className="flex-grow pt-16"> 
         <div className="max-w-5xl mx-auto px-4 py-12 md:py-20">
           <div className="bg-white dark:bg-gray-800/30 rounded-2xl shadow-xl overflow-hidden">
-            <div className="relative h-60 md:h-96 w-full"> {/* Increased image height */}
+            <div className="relative h-60 md:h-96 w-full">
               <Image 
                 src="https://i.ibb.co/x8tgDZk7/Pottery-workshop.jpg"
                 alt="Pottery workshop"

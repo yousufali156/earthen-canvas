@@ -2,17 +2,17 @@
 
 const { MongoClient } = require('mongodb');
 const path = require('path');
-// .env.local ফাইল থেকে ভ্যারিয়েবল লোড করার জন্য dotenv ব্যবহার করা হচ্ছে
+// .env.local load dotenv use it
 require('dotenv').config({ path: path.resolve(__dirname, '../.env.local') });
 
-// আপনার ডেটাবেস কানেকশন স্ট্রিং
+
 const uri = process.env.MONGODB_URI;
 if (!uri) {
   throw new Error('Please add your MONGODB_URI to .env.local');
 }
 const client = new MongoClient(uri);
 
-// আপনার প্রোডাক্টের সম্পূর্ণ এবং সঠিক তালিকা
+
 const products = [
     {
       "_id": "65d8a3b3f8b9c2a1b0e6d5d4",
@@ -179,26 +179,26 @@ const products = [
 
 async function seedDatabase() {
   try {
-    // ডেটাবেসের সাথে কানেক্ট করুন
+    
     await client.connect();
     console.log("Successfully connected to MongoDB.");
 
     const db = client.db("eartencanvas");
     const productsCollection = db.collection("products");
 
-    // পুরানো সব প্রোডাক্ট মুছে ফেলুন
+    
     await productsCollection.deleteMany({});
     console.log("Cleared existing products collection.");
     
-    // নতুন প্রোডাক্টগুলো ডেটাবেসে যোগ করুন
+    
     await productsCollection.insertMany(products);
     console.log(`${products.length} products have been successfully seeded.`);
 
   } catch (error) {
     console.error("Error seeding the database:", error);
   } finally {
-    // কানেকশন বন্ধ করুন
-    await client.close();
+    
+    // await client.close();
     console.log("MongoDB connection closed.");
   }
 }

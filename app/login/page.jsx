@@ -3,7 +3,7 @@
 "use client";
 
 import { signIn } from "next-auth/react";
-import { FcGoogle } from "react-icons/fc"; // Google লোগোর জন্য react-icons ব্যবহার করা হয়েছে
+import { FcGoogle } from "react-icons/fc";
 
 export default function LoginPage() {
   return (

@@ -14,7 +14,7 @@ export default function ProductModal({ product, onClose }) {
     >
       <div
         className="bg-gray-800/90 backdrop-blur-sm rounded-2xl w-full max-w-4xl p-8 border border-gray-700 shadow-2xl"
-        onClick={(e) => e.stopPropagation()} // Prevents modal from closing when clicking inside
+        onClick={(e) => e.stopPropagation()} 
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="relative w-full h-80 rounded-lg overflow-hidden border-2 border-blue-500/50">

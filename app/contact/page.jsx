@@ -15,8 +15,6 @@ import {
 } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-// ✅ Navbar & Footer import
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 

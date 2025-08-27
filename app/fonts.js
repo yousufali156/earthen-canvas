@@ -6,7 +6,7 @@ export const playfair = Playfair_Display({
     subsets: ["latin"],
     variable: "--font-playfair",
     display: "swap",
-    weight: ["400", "500", "600", "700"], // optional, specify weights if needed
+    weight: ["400", "500", "600", "700"], 
 });
 
 // Raleway font

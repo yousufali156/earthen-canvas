@@ -3,10 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      "images.unsplash.com", // Unsplash images
-      "i.ibb.co",            // imgbb direct links
-      "i.ibb.co.com",        // যদি অন্য কোন subdomain থাকে
-      "localhost",           // local testing (optional)
+      "images.unsplash.com", 
+      "i.ibb.co",            
+      "i.ibb.co.com",        
+      "localhost",           
     ],
   },
 };
