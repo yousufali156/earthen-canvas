@@ -13,7 +13,7 @@ Users can view public pages and products, while authenticated users can access a
 - [Technologies Used](#technologies-used)
 - [Setup & Installation](#setup--installation)
 - [Routes Summary](#routes-summary)
-- [Live Site](#live-site)
+- [Live Site](https://earthen-canvas-ec.vercel.app/)
 - [License](#license)
 
 ---
@@ -111,4 +111,4 @@ Visit http://localhost:3000
 
 Live Site
 
-Vercel https://earthen-canvas-six.vercel.app/
+[Vercel](https://earthen-canvas-ec.vercel.app/)
