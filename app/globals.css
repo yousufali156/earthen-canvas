@@ -22,3 +22,65 @@ body {
   background: #121212;
   color: #eaeaea;
 }
+
+/* Styles for Embla Carousel */
+.embla {
+  overflow: hidden;
+  padding: 1rem; /* Added padding to prevent content from touching edges */
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y;
+  margin-left: -1rem; /* Adjust for padding in slides */
+}
+
+.embla__slide {
+  flex: 0 0 auto; /* Allow slides to take their natural width by default */
+  min-width: 0;
+  padding-left: 1rem; /* Spacing between slides */
+  position: relative;
+}
+
+/* Responsive slide sizing */
+.embla__slide--products {
+    flex: 0 0 100%; /* Default for small screens */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+    .embla__slide--products {
+        flex: 0 0 50%;
+    }
+}
+@media (min-width: 1024px) { /* lg breakpoint */
+    .embla__slide--products {
+        flex: 0 0 25%;
+    }
+}
+
+.embla__slide--testimonials {
+    flex: 0 0 100%; /* Default for small screens */
+}
+@media (min-width: 768px) { /* md breakpoint */
+    .embla__slide--testimonials {
+        flex: 0 0 50%;
+    }
+}
+@media (min-width: 1024px) { /* lg breakpoint */
+    .embla__slide--testimonials {
+        flex: 0 0 33.33%;
+    }
+}
+
+.embla__slide--workshop {
+    flex: 0 0 100%; /* Default for small screens */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+    .embla__slide--workshop {
+        flex: 0 0 50%;
+    }
+}
+@media (min-width: 1024px) { /* lg breakpoint */
+    .embla__slide--workshop {
+        flex: 0 0 33.33%;
+    }
+}
