@@ -86,19 +86,19 @@ It demonstrates the use of **Next.js App Router**, **NextAuth.js**, and serverle
 
 1. **Clone the repository**
 
-```bash
+
 git clone https://github.com/yourusername/earthen-canvas.git
 cd earthen-canvas 
-<br/>
 
-Install dependencies
+---
+2. **Install dependencies**
 
 npm install
 # or
 yarn install
+---
 
-<br/>
-Set up environment variables
+3. **Set up environment variables**
 
 Create a .env.local file in the project root and add:
 
@@ -107,17 +107,17 @@ NEXTAUTH_SECRET=your_random_secret
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 MONGODB_URI=your_mongodb_connection_string
+---
 
-<br/>
-Run the development server
-```bash
+4. **Run the development server**
+
 npm run dev
 # or
 yarn dev
-<br/>
+---
 
 Visit 👉 http://localhost:3000
-<br/>
+
 🗂️ Routes Summary
 Route	Access	Description
 /	Public	Landing page with Hero, Product Highlights, Navbar, Footer
@@ -126,13 +126,13 @@ Route	Access	Description
 /products/[id]	Public	Product details page
 /dashboard/add-product	Protected	Add new product (requires login)
 📜 License
-<br/>
+---
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute this project with proper attribution.
 
 💡 Built with ❤️ using Next.js 15, NextAuth.js, Tailwind CSS, and MongoDB.
-<br/>
 
+---
 
 
 
