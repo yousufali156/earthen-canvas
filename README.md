@@ -86,14 +86,14 @@ It demonstrates the use of **Next.js App Router**, **NextAuth.js**, and serverle
 
 1. **Clone the repository**
 
-``bash
+
 git clone https://github.com/yourusername/earthen-canvas.git
 cd earthen-canvas 
 
 ---
 2. **Install dependencies**
 
-``bash
+
 npm install
  or
 yarn install
@@ -101,7 +101,7 @@ yarn install
 ---
 
 #3. **Set up environment variables**
-``bash
+
 Create a .env.local file in the project root and add:
 
 NEXTAUTH_URL=https://earthen-canvas-ec.vercel.app/
@@ -122,13 +122,13 @@ Visit 👉 http://localhost:3000
 
 🗂️ Routes Summary
 Route	Access	Description
-/	Public	Landing page with Hero, Product Highlights, Navbar, Footer
-/login	Public	Login page using NextAuth.js
-/products	Public	Product list page
-/products/[id]	Public	Product details page
-/dashboard/add-product	Protected	Add new product (requires login)
+/	Public	Landing page with Hero, Product Highlights, Navbar, Footer <br>
+/login	Public	Login page using NextAuth.js <br>
+/products	Public	Product list page <br>
+/products/[id]	Public	Product details page <br>
+/dashboard/add-product	Protected	Add new product (requires login) <br>
 📜 License
----
+---<br>
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute this project with proper attribution.
 
