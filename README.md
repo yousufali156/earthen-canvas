@@ -87,16 +87,16 @@ It demonstrates the use of **Next.js App Router**, **NextAuth.js**, and serverle
 1. **Clone the repository**
 
 
-git clone https://github.com/yourusername/earthen-canvas.git
-cd earthen-canvas 
+git clone https://github.com/yourusername/earthen-canvas.git 
+<br> cd earthen-canvas 
 
 ---
 2. **Install dependencies**
 
 
-npm install
- or
-yarn install
+npm install<br>
+ or <br>
+<br> yarn install
 
 ---
 
