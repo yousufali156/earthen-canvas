@@ -88,18 +88,18 @@ It demonstrates the use of **Next.js App Router**, **NextAuth.js**, and serverle
 
 ```bash
 git clone https://github.com/yourusername/earthen-canvas.git
-cd earthen-canvas ```
-
+cd earthen-canvas 
+<br/>
 
 Install dependencies
-```bash
+
 npm install
 # or
 yarn install
 
-
+<br/>
 Set up environment variables
-```bash
+
 Create a .env.local file in the project root and add:
 
 NEXTAUTH_URL=https://earthen-canvas-ec.vercel.app/
@@ -108,16 +108,16 @@ GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 MONGODB_URI=your_mongodb_connection_string
 
-
+<br/>
 Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-
+<br/>
 
 Visit 👉 http://localhost:3000
-
+<br/>
 🗂️ Routes Summary
 Route	Access	Description
 /	Public	Landing page with Hero, Product Highlights, Navbar, Footer
@@ -126,11 +126,12 @@ Route	Access	Description
 /products/[id]	Public	Product details page
 /dashboard/add-product	Protected	Add new product (requires login)
 📜 License
-
+<br/>
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute this project with proper attribution.
 
 💡 Built with ❤️ using Next.js 15, NextAuth.js, Tailwind CSS, and MongoDB.
+<br/>
 
 
 
@@ -139,14 +140,4 @@ You are free to use, modify, and distribute this project with proper attribution
 
 
 
-## 👨‍💻 Developer Info  
-
-**Md. Yousuf Ali**  
-Frontend Web Developer | MERN Stack Enthusiast  
-
-🌐 Portfolio: [https://mdyousufali.dev](https://mdyousufali.dev)  
-🔗 LinkedIn: [https://linkedin.com/in/mdyousufali](https://linkedin.com/in/mdyousufali)  
-💻 GitHub: [https://github.com/mdyousufali](https://github.com/mdyousufali)  
-📧 Email: mdyousufali.dev@gmail.com  
-📍 Location: Bogura, Bangladesh  
 
