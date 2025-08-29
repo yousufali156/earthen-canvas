@@ -100,7 +100,8 @@ npm install<br>
 
 ---
 
-#3. **Set up environment variables**
+#3. **Set up environment variables** 
+
 <br>
 Create a .env.local file in the project root and add:
 <br>
@@ -112,7 +113,7 @@ MONGODB_URI=your_mongodb_connection_string
 ---
 
 4. **Run the development server**
-``bash
+ <br>
 npm run dev<br>
  or<br>
 yarn dev
@@ -136,8 +137,17 @@ You are free to use, modify, and distribute this project with proper attribution
 
 ---
 
+## 👨‍💻 Developer Info  
 
+**Md. Yousuf Ali**  
+Frontend Web Developer | MERN Stack Enthusiast  
 
+🌐 Portfolio: [https://mdyousufali.dev](https://mdyousufali.dev)  <br>
+🔗 LinkedIn: [https://linkedin.com/in/mdyousufali](https://linkedin.com/in/mdyousufali)   <br>
+💻 GitHub: [https://github.com/mdyousufali](https://github.com/mdyousufali)  <br>
+📧 Email: mdyousufali.dev@gmail.com  <br>
+📍 Location: Bogura, Bangladesh  <br>
+<br>
 
 
 
