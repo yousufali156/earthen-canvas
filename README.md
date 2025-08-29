@@ -86,20 +86,22 @@ It demonstrates the use of **Next.js App Router**, **NextAuth.js**, and serverle
 
 1. **Clone the repository**
 
-
+``bash
 git clone https://github.com/yourusername/earthen-canvas.git
 cd earthen-canvas 
 
 ---
 2. **Install dependencies**
 
+``bash
 npm install
-# or
+ or
 yarn install
+
 ---
 
-3. **Set up environment variables**
-
+#3. **Set up environment variables**
+``bash
 Create a .env.local file in the project root and add:
 
 NEXTAUTH_URL=https://earthen-canvas-ec.vercel.app/
@@ -110,9 +112,9 @@ MONGODB_URI=your_mongodb_connection_string
 ---
 
 4. **Run the development server**
-
+``bash
 npm run dev
-# or
+ or
 yarn dev
 ---
 
