@@ -96,14 +96,14 @@ git clone https://github.com/yourusername/earthen-canvas.git
 
 npm install<br>
  or <br>
-<br> yarn install
+ yarn install
 
 ---
 
 #3. **Set up environment variables**
-
+<br>
 Create a .env.local file in the project root and add:
-
+<br>
 NEXTAUTH_URL=https://earthen-canvas-ec.vercel.app/
 NEXTAUTH_SECRET=your_random_secret
 GOOGLE_CLIENT_ID=your_google_client_id
@@ -113,13 +113,13 @@ MONGODB_URI=your_mongodb_connection_string
 
 4. **Run the development server**
 ``bash
-npm run dev
- or
+npm run dev<br>
+ or<br>
 yarn dev
 ---
 
 Visit 👉 http://localhost:3000
-
+<br>
 🗂️ Routes Summary
 Route	Access	Description
 /	Public	Landing page with Hero, Product Highlights, Navbar, Footer <br>
@@ -129,7 +129,7 @@ Route	Access	Description
 /dashboard/add-product	Protected	Add new product (requires login) <br>
 📜 License
 ---<br>
-This project is licensed under the MIT License.
+This project is licensed under the MIT License.<br>
 You are free to use, modify, and distribute this project with proper attribution.
 
 💡 Built with ❤️ using Next.js 15, NextAuth.js, Tailwind CSS, and MongoDB.
