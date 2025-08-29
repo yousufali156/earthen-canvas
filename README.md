@@ -88,7 +88,7 @@ It demonstrates the use of **Next.js App Router**, **NextAuth.js**, and serverle
 
 ```bash
 git clone https://github.com/yourusername/earthen-canvas.git
-cd earthen-canvas
+cd earthen-canvas ```
 
 
 Install dependencies
